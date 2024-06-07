@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - EJS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Remix Icon -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    
+    <div class="h-screen bg-zinc-900 flex flex-col gap-4 items-center justify-center text-white">
+
+        <a href="/allusers" class="text-blue-500 font-medium">View All Users <i class="ri-arrow-right-up-line"></i></a>
+
+        <!-- Form -->
+        <div class="w-1/2 h-fit bg-zinc-800 rounded-lg">
+            <form action="/adduser" method="post" class="p-10 flex flex-col gap-3">
+                <input class="bg-zinc-600 outline-none rounded px-5 py-1 text-base block" placeholder="name" type="text" name="name">
+                <input class="bg-zinc-600 outline-none rounded px-5 py-1 text-base block" placeholder="email" type="text" name="email">
+                <input class="bg-zinc-600 outline-none rounded px-5 py-1 text-base block" placeholder="image URL" type="text" name="imageurl">
+                <button type="submit" class="bg-blue-600 px-8 py-1 rounded">Create User</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

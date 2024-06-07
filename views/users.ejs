@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Remix Icon -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body class="bg-zinc-900 text-white">
+
+    <div class="flex gap-8 font-medium px-10 mt-8">
+        <a class="text-blue-500" href="/">Go Back <i class="ri-arrow-right-up-fill"></i></a>
+        <h1>All Users</h1>
+    </div>
+    
+    <div class="text-white p-10 flex flex-wrap gap-4">
+
+
+        <% if(users.length > 0){ %>
+            <% users.forEach(function(user) { %>
+                <div class="w-64 bg-zinc-800 p-4 rounded-lg">
+                    <div class="w-full h-52 bg-zinc-600 rounded-lg overflow-hidden">
+                        <img class="w-full h-full object-cover" src="<%= user.imageString %>" alt="">
+                    </div>
+                    <h1 class="font-medium mt-4"><%= user.name %></h1>
+                    <h2 class="font-medium "><%= user.email %></h2>
+                    <div class="flex justify-between mt-3">
+                        <a href="/edit/<%= user._id %>" class="text-zinc-400 font-medium hover:text-zinc-300">edit</a>
+                        <a href="/delete/<%= user._id %>" class="text-red-500 font-medium">Delete User</a>
+                    </div>
+                </div>
+            <% }) %>
+        <% }else{ %>
+            <h1 class="font-medium">No User Yet</h1>
+        <% } %>
+
+
+    </div>
+</body>
+</html>
